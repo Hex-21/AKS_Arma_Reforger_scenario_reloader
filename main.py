@@ -27,4 +27,4 @@ while True:
     with open(f"{ConfigPathArma}", "w", encoding="utf-8") as f:
         json.dump(config, f, indent=4)
 
-    time.sleep(60*60*24*2)  # 48H (60*60*24*2)
+    time.sleep(60*60*12)  # 12H
