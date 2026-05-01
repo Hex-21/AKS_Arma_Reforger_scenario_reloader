@@ -27,6 +27,7 @@ while True:
             logging.debug(f"Read {ScenarioConfig} with the scenarios: {data}")
     except Exception as e:
         logging.error(f"Failed to read {ScenarioConfig} with the Exception: {e}")
+        exit(1)
 
 
     scenarios = data["scenarios"]
@@ -42,6 +43,7 @@ while True:
         logging.debug(f"Read {ConfigPathArma} with the previous scenario: {arma_config_scenario}")
     except Exception as e:
         logging.error(f"Failed to read {ConfigPathArma} with the Exception: {e}")
+        exit(1)
 
     with open(ConfigPathArma, "w", encoding="utf-8") as f:
         json.dump(arma_config_scenario, f, indent=4)
