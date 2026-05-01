@@ -1,0 +1,11 @@
+{
+    "scenarios": {
+        "monday": "{4C7E823A912CB306}Missions/AKS_Cain_PvE.conf",
+        "tuesday": "{E324BFABBFDB19EF}Missions/AKS_FAIRCROFT_PVE.conf",
+        "wednesday": "{4C7E823A912CB306}Missions/AKS_Cain_PvE.conf",
+        "thursday": "{4C7E823A912CB306}Missions/AKS_Cain_PvE.conf",
+        "friday": "{E324BFABBFDB19EF}Missions/AKS_FAIRCROFT_PVE.conf",
+        "saturday": "{58620702C58A3D88}Missions/AKS_Alhadra_PvE.conf",
+        "sunday": "{58620702C58A3D88}Missions/AKS_Alhadra_PvE.conf"
+    }
+}
