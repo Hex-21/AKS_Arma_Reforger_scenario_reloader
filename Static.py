@@ -21,8 +21,6 @@ ScenarioConfig = "/PathToScenarioConfig/WeekScenarioConfig.json"
 logging.info(f"Config path: {ConfigPathArma} | Scenario path: {ScenarioConfig}")
 
 while True:
-    with open(f"{ConfigPathArma}", "r", encoding="utf-8") as f:
-        config = json.load(f)
     try:
         with open(ScenarioConfig, "r", encoding="utf-8") as f:
             data = json.load(f)
