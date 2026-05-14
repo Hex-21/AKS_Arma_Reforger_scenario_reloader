@@ -29,26 +29,23 @@ while True:
         logging.error(f"Failed to read {ScenarioConfig} with the Exception: {e}")
         exit(1)
 
-
     scenarios = data["scenarios"]
     tday = datetime.today().strftime("%A").lower()
     scenario = scenarios.get(tday)
-    logging.info(f"Scenario: {scenario} for today: {tday}")
 
     try:
         with open(ConfigPathArma, "r", encoding="utf-8") as f:
             arma_config_scenario = json.load(f)
-            logging.debug(f"Content of {ConfigPathArma}: {arma_config_scenario}")
         arma_config_scenario["game"]["scenarioId"] = scenario
-        logging.debug(f"Read {ConfigPathArma} with the previous scenario: {arma_config_scenario}")
+        logging.debug(f"Read {ConfigPathArma} with the previous scenario: {arma_config_scenario["game"]["scenarioId"]}")
     except Exception as e:
         logging.error(f"Failed to read {ConfigPathArma} with the Exception: {e}")
         exit(1)
 
     with open(ConfigPathArma, "w", encoding="utf-8") as f:
         json.dump(arma_config_scenario, f, indent=4)
-        logging.debug(f"Overwriting {ConfigPathArma} with the content: {arma_config_scenario}")
+        logging.debug(f"Overwriting {ConfigPathArma} with the scenario: {scenario}")
 
-    logging.debug(f"Scenario: {scenario} for today: {tday}, now sleeping 1Hour")
+    logging.info(f"Scenario: {scenario} for today: {tday}, now sleeping 1Hour")
     sleep(60 * 60 * 1)
-exit(1)
+exit(0)
